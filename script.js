@@ -32,6 +32,9 @@ function distance(){
 			const phi2 = destinationLatitude * Math.PI/180;
 			const delta_phi = (destinationLatitude-lat1) * Math.PI/180;
 			const delta_lambda = (destinationLongitude-lon1) * Math.PI/180;
+			const phi2 = bosaLatitude * Math.PI/180;
+			const delta_phi = (bosaLatitude-lat1) * Math.PI/180;
+			const delta_lambda = (bosaLongitude-lon1) * Math.PI/180;
 
 			const a = Math.sin(delta_phi/2) * Math.sin(delta_phi/2) +
 					  Math.cos(phi1) * Math.cos(phi2) *
