@@ -1,5 +1,11 @@
-const bosaLatitude = 40.2964939254985;
-const bosaLongitude = 8.499781672343888;
+if (document.title == "Foggiometro"){
+	const destinationLatitude = 41.462299;
+	const destinationLongitude = 15.544744;
+} else if (document.title == "Bosometro"){
+	const destinationLatitude = 40.2964939254985;
+	const destinationLongitude = 8.499781672343888;
+}
+
 
 let watchId = null;
 
@@ -23,9 +29,9 @@ function distance(){
 			
 			const R = 6371*(10**3); // metres
 			const phi1 = lat1 * Math.PI/180; // φ, λ in radians
-			const phi2 = foggiaLatitude * Math.PI/180;
-			const delta_phi = (foggiaLatitude-lat1) * Math.PI/180;
-			const delta_lambda = (foggiaLongitude-lon1) * Math.PI/180;
+			const phi2 = destinationLatitude * Math.PI/180;
+			const delta_phi = (destinationLatitude-lat1) * Math.PI/180;
+			const delta_lambda = (destinationLongitude-lon1) * Math.PI/180;
 
 			const a = Math.sin(delta_phi/2) * Math.sin(delta_phi/2) +
 					  Math.cos(phi1) * Math.cos(phi2) *
@@ -37,7 +43,7 @@ function distance(){
 			
 			const km = (d / 1000).toFixed(2);
 			
-			console.log(`distanza da Bosa: ${km}`)
+			console.log(`distanza da Foggia: ${km}`)
 			
 			const display = document.getElementById("distanceDisplay");
 			if (display) {
